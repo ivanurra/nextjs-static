@@ -1,14 +1,21 @@
 import { FC } from "react";
 import Head from "next/head";
 
-export const Layout: FC = ({ children }) => {
+interface Props {
+  title?: string;
+}
+
+export const Layout: FC<Props> = ({ children, title }) => {
   return (
     <>
       <Head>
-        <title>Pokemon App</title>
+        <title>{title || "Pokemon App"}</title>
         <meta name="author" content="Iván Urra" />
-        <meta name="description" content="Information about pokemon XXX" />
-        <meta name="keywords" content="XXX. pokemon, pokedex" />
+        <meta
+          name="description"
+          content={`Information about pokemon ${title}`}
+        />
+        <meta name="keywords" content={`${title}, pokemon, pokedex `} />
       </Head>
       {/* NAVBAR */}
       <main>{children}</main>
