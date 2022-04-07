@@ -16,12 +16,12 @@ export const Navbar = () => {
       }}
     >
       <Image
-        src="../../public/Anime-Pokemon-PNG-Image.png"
-        alt="Logo Pokemon"
-        width={70}
-        height={70}
+        src="/Anime-Pokemon-PNG-Image.png"
+        alt="Logo"
+        width={60}
+        height={60}
       />
-      <Text color="white" h2>
+      <Text color="white" h2 css={{ marginLeft: "15px" }}>
         P
       </Text>
       <Text color="white" h3>
