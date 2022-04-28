@@ -2,15 +2,16 @@ import React from "react";
 import { Layout } from "../../components/layouts/layout";
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import { pokeApi } from "../../api";
+import { Pokemon } from "../../interfaces";
 
 interface Props {
-  pokemon: any;
+  pokemon: Pokemon;
 }
 
 const PokemonPage: NextPage<Props> = ({ pokemon }) => {
   return (
     <Layout title="Some pokemon">
-      <h1>Temp</h1>
+      <h1>{pokemon.name}</h1>
     </Layout>
   );
 };
@@ -29,11 +30,10 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { id } = params as { id: string };
 
-  const { data } = await pokeApi.get<PokemonListResponse>("/pokemon?limit=151");
-
+  const { data } = await pokeApi.get<Pokemon>(`/pokemon/${id}`);
 
   return {
-    props: {pokemon: }
+    props: { pokemon: data },
   };
 };
 
