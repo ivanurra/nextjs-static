@@ -17,19 +17,22 @@ export const Navbar = () => {
         backgroundColor: theme?.colors.gray800.value,
       }}
     >
+      <Image
+        src="/Anime-Pokemon-PNG-Image.png"
+        alt="Logo"
+        width={40}
+        height={40}
+      />
       <NextLink href="/" passHref>
         <Link>
-          <Image
-            src="/Anime-Pokemon-PNG-Image.png"
-            alt="Logo"
-            width={40}
-            height={40}
-          />
-          <Text color="white" h2 css={{ marginLeft: "20px" }}>
+          <Text color="white" h2 css={{ marginLeft: "15px" }}>
             P
           </Text>
           <Text color="white" h3>
             okémon
+          </Text>
+          <Text color="white" h2 css={{ marginLeft: "10px" }}>
+            151
           </Text>
         </Link>
       </NextLink>
@@ -37,7 +40,7 @@ export const Navbar = () => {
       <Spacer css={{ flex: 1 }} />
       <NextLink href="/favorites" passHref>
         <Link>
-          <Text color="white" h3>
+          <Text color="white" h3 css={{ marginRight: "15px" }}>
             Favorites
           </Text>
         </Link>

@@ -1,8 +1,11 @@
+import { Layout } from "../../components/layouts/layout";
 
-const Favorites = () => {
+const FavoritesPage = () => {
   return (
-    <div>favorites</div>
-  )
-}
+    <Layout title="Pokémons - Favorites">
+      <h1>Favorites</h1>
+    </Layout>
+  );
+};
 
-export default Favorites;
+export default FavoritesPage;
