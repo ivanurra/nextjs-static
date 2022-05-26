@@ -10,6 +10,10 @@ interface Props {
 }
 
 const PokemonPage: NextPage<Props> = ({ pokemon }) => {
+  const onToggleFavorite = () => {
+    console.log("---> ID:", pokemon.id);
+  };
+
   return (
     <Layout title={pokemon.name}>
       <Grid.Container css={{ marginTop: "5px" }} gap={2}>
@@ -36,7 +40,7 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
               <Text h1 transform="capitalize">
                 {pokemon.name}
               </Text>
-              <Button color="gradient" ghost>
+              <Button color="gradient" ghost onClick={onToggleFavorite}>
                 Save to favorites
               </Button>
             </Card.Header>
