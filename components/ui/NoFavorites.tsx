@@ -13,7 +13,15 @@ export const NoFavorites = () => {
           alignSelf: "center",
         }}
       >
-        <Text>No favorites yet</Text>
+        <Text
+          h1
+          css={{
+            marginTop: "40px",
+            marginBottom: "40px",
+          }}
+        >
+          No favorites yet
+        </Text>
         <Image
           src="/Anime-Pokemon-PNG-Image.png"
           alt="Logo"
